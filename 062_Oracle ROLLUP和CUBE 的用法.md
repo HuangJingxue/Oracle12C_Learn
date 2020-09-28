@@ -142,7 +142,9 @@ SYS@testdb>select grouping(index_type) g_ind, grouping(status) g_st, index_type,
 
 
 ```
+```wiki
 CUBE和ROLLUP相比，CUBE又增加了对STATUS列的GROUP BY统计。
 GROUP BY ROLLUP(A, B, C)的话，首先会对(A、B、C)进行GROUP BY，然后对(A、B)进行GROUP BY，然后是(A)进行GROUP BY，最后对全表进行GROUP BY操作。
 GROUP BY CUBE(A, B, C)，则首先会对(A、B、C)进行GROUP BY，然后依次是(A、B)，(A、C)，(A)，(B、C)，(B)，(C)，最后对全表进行GROUP BY操作。 
 grouping_id()可以美化效果。
+```
